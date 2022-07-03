@@ -42,9 +42,9 @@ class Prison{
             }
         }
 
-        bool search(int prisoner_num){
+        bool search(int prisoner_num, int total){
             int index=0, cur=prisoner_num;
-            while(index<50){
+            while(index<total/2){
                  cur=doors[cur];
                 if(cur==prisoner_num)
                     return true;
@@ -57,7 +57,7 @@ class Prison{
 
         bool all_prisoners(int total){
             for(int i=0; i<total; i++){
-                bool found=search(i);
+                bool found=search(i, total);
                 if(!found)
                     return false;
             }
